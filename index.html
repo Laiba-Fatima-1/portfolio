@@ -51,10 +51,10 @@ nav{
   color:var(--ink);text-decoration:none;
 }
 .nav-logo span{color:var(--accent);}
-.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+.nav-links{display:flex;align-items:center;gap:2.1rem;list-style:none;}
 .nav-links a{
   font-family:'Kanit',sans-serif;font-weight:500;
-  font-size:0.82rem;text-transform:uppercase;letter-spacing:0.1em;
+  font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;
   color:var(--light);text-decoration:none;transition:color 0.2s;
 }
 .nav-links a:hover{color:var(--accent);}
@@ -75,13 +75,14 @@ nav{
   display:none;position:fixed;top:68px;left:0;right:0;z-index:999;
   background:rgba(250,249,247,0.97);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);flex-direction:column;
+  max-height:calc(100vh - 68px);overflow-y:auto;
 }
 .mob-menu.open{display:flex;}
 .mob-menu a{
-  font-family:'Kanit',sans-serif;font-weight:700;font-size:1.3rem;
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:1.2rem;
   text-transform:uppercase;letter-spacing:0.04em;
   color:var(--ink);text-decoration:none;
-  padding:1rem clamp(1.5rem,5vw,3.5rem);
+  padding:0.9rem clamp(1.5rem,5vw,3.5rem);
   border-bottom:1px solid var(--border);transition:color 0.2s;
 }
 .mob-menu a:last-child{border:none;color:var(--accent);}
@@ -95,7 +96,6 @@ nav{
   background:var(--cream);
   position:relative;overflow:hidden;
 }
-/* subtle gradient blobs */
 #hero::before{
   content:'';position:absolute;
   width:600px;height:600px;
@@ -125,7 +125,6 @@ nav{
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
 .hero-loc{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--xlight);}
 
-/* main hero content */
 .hero-main{
   display:grid;
   grid-template-columns:1fr auto;
@@ -154,7 +153,7 @@ nav{
   font-family:'Inter',sans-serif;font-weight:400;
   font-size:clamp(0.88rem,1.3vw,1rem);
   color:var(--mid);line-height:1.75;
-  max-width:420px;margin-bottom:2.5rem;
+  max-width:440px;margin-bottom:2.5rem;
 }
 .hero-btns{display:flex;gap:0.875rem;flex-wrap:wrap;}
 .btn-primary{
@@ -179,7 +178,6 @@ nav{
 }
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
 
-/* ── PHOTO CARD ── */
 .hero-photo-col{
   display:flex;flex-direction:column;
   align-items:center;gap:1rem;
@@ -198,32 +196,6 @@ nav{
 .hero-photo-frame img{
   width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
 }
-.hero-photo-placeholder{
-  width:100%;height:100%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:0.75rem;
-}
-.hero-photo-placeholder .ph-initials{
-  font-family:'Kanit',sans-serif;font-weight:900;
-  font-size:clamp(3rem,6vw,5rem);color:var(--accent);opacity:0.4;
-  line-height:1;
-}
-.hero-photo-placeholder .ph-hint{
-  font-family:'JetBrains Mono',monospace;font-size:0.62rem;
-  color:var(--accent);opacity:0.5;text-align:center;
-  padding:0 1rem;line-height:1.5;
-}
-/* floating badge on photo */
-.photo-badge{
-  position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);
-  background:rgba(250,249,247,0.9);backdrop-filter:blur(8px);
-  border:1px solid var(--border);border-radius:100px;
-  padding:0.35rem 0.9rem;
-  font-family:'JetBrains Mono',monospace;font-size:0.65rem;
-  color:var(--ink);white-space:nowrap;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-/* mini stat chips */
 .hero-mini-chips{display:flex;flex-direction:column;gap:0.5rem;}
 .hero-chip{
   background:#fff;border:1px solid var(--border);
@@ -237,7 +209,6 @@ nav{
 }
 .hero-chip-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--xlight);margin-top:2px;}
 
-/* hero bottom bar */
 .hero-bottom{
   display:flex;justify-content:space-between;align-items:center;
   padding:1.25rem 0 1.75rem;
@@ -309,9 +280,7 @@ nav{
   color:var(--mid);line-height:1.85;margin-bottom:2rem;
 }
 .about-body strong{color:var(--ink);font-weight:600;}
-/* animated text chars */
 .anim-char{opacity:0.15;transition:opacity 0.05s;}
-/* about right — number grid */
 .about-nums{
   display:grid;grid-template-columns:1fr 1fr;
   gap:1px;background:var(--border);border-radius:24px;overflow:hidden;
@@ -331,6 +300,56 @@ nav{
 }
 .about-num-v span{color:var(--accent);}
 .about-num-l{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--light);letter-spacing:0.06em;}
+
+/* ── EXPERIENCE ── */
+#experience{
+  background:var(--cream2);
+  padding:clamp(4.5rem,8vw,7rem) clamp(1.5rem,5vw,3.5rem);
+}
+.exp-inner{max-width:1200px;margin:0 auto;}
+.exp-card{
+  background:#fff;border:1px solid var(--border-dark);
+  border-radius:clamp(20px,3vw,32px);overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.05);
+}
+.exp-strip{height:4px;background:linear-gradient(90deg,#6B5FE8,#A394FF);}
+.exp-body{padding:clamp(1.75rem,3.5vw,3rem);}
+.exp-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:1.5rem;flex-wrap:wrap;margin-bottom:1.25rem;
+}
+.exp-role{
+  font-family:'Kanit',sans-serif;font-weight:800;
+  font-size:clamp(1.15rem,2.6vw,1.8rem);text-transform:uppercase;
+  color:var(--ink);letter-spacing:-0.01em;
+}
+.exp-org{
+  font-family:'Kanit',sans-serif;font-weight:400;font-style:italic;
+  color:var(--accent);font-size:clamp(0.95rem,1.6vw,1.2rem);
+}
+.exp-meta{
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+  color:var(--light);text-align:right;line-height:1.7;
+}
+.exp-desc{
+  font-family:'Inter',sans-serif;font-size:0.88rem;
+  color:var(--mid);line-height:1.75;margin-bottom:1rem;max-width:740px;
+}
+.exp-points{list-style:none;display:flex;flex-direction:column;gap:0.35rem;margin-bottom:1.5rem;max-width:740px;}
+.exp-points li{
+  font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--mid);
+  padding-left:1rem;position:relative;line-height:1.5;
+}
+.exp-points li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700;}
+.exp-stat-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+}
+.exp-stat{background:var(--cream);padding:1.1rem 1.25rem;transition:background 0.2s;}
+.exp-stat:hover{background:var(--lavender);}
+.exp-stat-v{font-family:'Kanit',sans-serif;font-weight:800;font-size:1.4rem;color:var(--accent);line-height:1;}
+.exp-stat-l{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--light);margin-top:0.35rem;letter-spacing:0.02em;}
 
 /* ── SKILLS ── */
 #skills{
@@ -397,7 +416,6 @@ nav{
   margin-bottom:clamp(3rem,5vw,5rem);flex-wrap:wrap;gap:1.5rem;
 }
 .proj-header-left{}
-/* sticky stack */
 .proj-stack-area{position:relative;}
 .proj-item{height:90vh;display:flex;align-items:center;justify-content:center;}
 .proj-card{
@@ -412,7 +430,6 @@ nav{
   transition:box-shadow 0.3s;
 }
 .proj-card:hover{box-shadow:0 16px 48px rgba(107,95,232,0.12);}
-/* colored top strip */
 .proj-strip{height:4px;width:100%;}
 .proj-card-body{padding:clamp(1.5rem,3vw,2.5rem);}
 .proj-top-row{
@@ -458,7 +475,6 @@ nav{
   transition:all 0.2s;
 }
 .proj-link-btn:hover{border-color:var(--accent);color:var(--accent);}
-/* proj content grid */
 .proj-content{
   display:grid;grid-template-columns:1.2fr 1fr;
   gap:1.5rem;align-items:start;
@@ -480,7 +496,6 @@ nav{
   border-radius:6px;padding:0.15rem 0.5rem;
   font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--light);
 }
-/* visual panel */
 .proj-visual{
   border-radius:clamp(12px,2vw,20px);overflow:hidden;
   height:clamp(200px,25vw,340px);
@@ -505,6 +520,36 @@ nav{
   font-size:clamp(1.2rem,2.5vw,1.8rem);line-height:1;
 }
 .pvs-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;opacity:0.5;margin-top:2px;}
+
+/* ── MORE BUILDS ── */
+.mb-head{margin:clamp(4.5rem,8vw,7rem) 0 clamp(2rem,4vw,3rem);}
+.mb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem;}
+.mb-card{
+  background:#fff;border:1px solid var(--border-dark);
+  border-radius:20px;padding:1.5rem;
+  transition:all 0.25s;display:flex;flex-direction:column;gap:0.85rem;
+}
+.mb-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 32px rgba(107,95,232,0.1);}
+.mb-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.75rem;}
+.mb-title{
+  font-family:'Kanit',sans-serif;font-weight:700;font-size:0.98rem;
+  text-transform:uppercase;color:var(--ink);letter-spacing:0.01em;line-height:1.25;
+}
+.mb-date{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--xlight);white-space:nowrap;}
+.mb-desc{font-family:'Inter',sans-serif;font-size:0.8rem;color:var(--mid);line-height:1.65;flex-grow:1;}
+.mb-stat{font-family:'JetBrains Mono',monospace;font-size:0.74rem;color:var(--accent);font-weight:600;}
+.mb-tags{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mb-foot{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;margin-top:0.15rem;padding-top:0.85rem;border-top:1px solid var(--border);}
+.mb-badge{
+  font-family:'Kanit',sans-serif;font-size:0.63rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.04em;
+  padding:0.2rem 0.6rem;border-radius:100px;
+}
+.mb-link{
+  font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);text-decoration:none;
+}
+.mb-link:hover{text-decoration:underline;}
 
 /* ── ACHIEVEMENTS ── */
 #achievements{
@@ -607,6 +652,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
   .about-inner{grid-template-columns:1fr;}
   .proj-content{grid-template-columns:1fr;}
   .proj-visual{height:clamp(160px,40vw,260px);}
+  .exp-meta{text-align:left;}
 }
 @media(max-width:768px){
   .nav-links{display:none;}
@@ -632,6 +678,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
   <a href="#hero" class="nav-logo">Laiba<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#achievements">Awards</a></li>
@@ -641,6 +688,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
 </nav>
 <div class="mob-menu" id="mobMenu">
   <a href="#about" onclick="cM()">About</a>
+  <a href="#experience" onclick="cM()">Experience</a>
   <a href="#skills" onclick="cM()">Skills</a>
   <a href="#projects" onclick="cM()">Projects</a>
   <a href="#achievements" onclick="cM()">Awards</a>
@@ -661,7 +709,8 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
       <p class="hero-desc">
         I build AI-powered products that actually ship —
         from real-time interview evaluation systems
-        to award-winning rescue robots.
+        to award-winning rescue robots, plus a run of
+        deployed ML apps built during my Arch Technologies internship.
         4th-semester CS · MUST · 4.0 CGPA.
       </p>
       <div class="hero-btns">
@@ -681,7 +730,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
           <div class="hero-chip-label">Expo Winner</div>
         </div>
         <div class="hero-chip">
-          <div class="hero-chip-val">5+</div>
+          <div class="hero-chip-val">10+</div>
           <div class="hero-chip-label">Projects</div>
         </div>
       </div>
@@ -696,6 +745,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
       <span class="hero-tag">RAG</span>
       <span class="hero-tag">MediaPipe</span>
       <span class="hero-tag">Node.js</span>
+      <span class="hero-tag">scikit-learn</span>
     </div>
     <div class="scroll-hint">Scroll to explore ↓</div>
   </div>
@@ -705,14 +755,14 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
 <div class="marquee-section">
   <div class="marquee-row">
     <div class="marquee-track" id="mq1">
-      <span class="mq-word">Next.js</span><span class="mq-word hi">AI Engineer</span><span class="mq-word">Python</span><span class="mq-word">Full-Stack</span><span class="mq-word hi">Groq · Llama</span><span class="mq-word">RAG</span><span class="mq-word">MediaPipe</span><span class="mq-word hi">Whisper</span><span class="mq-word">Node.js</span><span class="mq-word">ESP32</span><span class="mq-word hi">4.0 CGPA</span><span class="mq-word">MongoDB</span>
-      <span class="mq-word">Next.js</span><span class="mq-word hi">AI Engineer</span><span class="mq-word">Python</span><span class="mq-word">Full-Stack</span><span class="mq-word hi">Groq · Llama</span><span class="mq-word">RAG</span><span class="mq-word">MediaPipe</span><span class="mq-word hi">Whisper</span><span class="mq-word">Node.js</span><span class="mq-word">ESP32</span><span class="mq-word hi">4.0 CGPA</span><span class="mq-word">MongoDB</span>
+      <span class="mq-word">Next.js</span><span class="mq-word hi">AI Engineer</span><span class="mq-word">Python</span><span class="mq-word">Full-Stack</span><span class="mq-word hi">Groq · Llama</span><span class="mq-word">RAG</span><span class="mq-word">MediaPipe</span><span class="mq-word hi">Whisper</span><span class="mq-word">Node.js</span><span class="mq-word">ESP32</span><span class="mq-word hi">4.0 CGPA</span><span class="mq-word">MongoDB</span><span class="mq-word hi">scikit-learn</span><span class="mq-word">TensorFlow</span><span class="mq-word hi">XGBoost</span><span class="mq-word">C++</span>
+      <span class="mq-word">Next.js</span><span class="mq-word hi">AI Engineer</span><span class="mq-word">Python</span><span class="mq-word">Full-Stack</span><span class="mq-word hi">Groq · Llama</span><span class="mq-word">RAG</span><span class="mq-word">MediaPipe</span><span class="mq-word hi">Whisper</span><span class="mq-word">Node.js</span><span class="mq-word">ESP32</span><span class="mq-word hi">4.0 CGPA</span><span class="mq-word">MongoDB</span><span class="mq-word hi">scikit-learn</span><span class="mq-word">TensorFlow</span><span class="mq-word hi">XGBoost</span><span class="mq-word">C++</span>
     </div>
   </div>
   <div class="marquee-row">
     <div class="marquee-track" id="mq2" style="transform:translateX(-300px)">
-      <span class="mq-word hi">LangChain</span><span class="mq-word">TypeScript</span><span class="mq-word hi">Product Builder</span><span class="mq-word">Supabase</span><span class="mq-word">Vercel AI SDK</span><span class="mq-word hi">Startup Minded</span><span class="mq-word">Figma</span><span class="mq-word">OpenCV</span><span class="mq-word hi">MUST · Multan</span><span class="mq-word">JWT Auth</span><span class="mq-word hi">Embeddings</span><span class="mq-word">Cloudinary</span>
-      <span class="mq-word hi">LangChain</span><span class="mq-word">TypeScript</span><span class="mq-word hi">Product Builder</span><span class="mq-word">Supabase</span><span class="mq-word">Vercel AI SDK</span><span class="mq-word hi">Startup Minded</span><span class="mq-word">Figma</span><span class="mq-word">OpenCV</span><span class="mq-word hi">MUST · Multan</span><span class="mq-word">JWT Auth</span><span class="mq-word hi">Embeddings</span><span class="mq-word">Cloudinary</span>
+      <span class="mq-word hi">LangChain</span><span class="mq-word">TypeScript</span><span class="mq-word hi">Product Builder</span><span class="mq-word">Supabase</span><span class="mq-word">Vercel AI SDK</span><span class="mq-word hi">Startup Minded</span><span class="mq-word">Figma</span><span class="mq-word">OpenCV</span><span class="mq-word hi">MUST · Multan</span><span class="mq-word">JWT Auth</span><span class="mq-word hi">Embeddings</span><span class="mq-word">Cloudinary</span><span class="mq-word hi">Random Forest</span><span class="mq-word">Pandas</span>
+      <span class="mq-word hi">LangChain</span><span class="mq-word">TypeScript</span><span class="mq-word hi">Product Builder</span><span class="mq-word">Supabase</span><span class="mq-word">Vercel AI SDK</span><span class="mq-word hi">Startup Minded</span><span class="mq-word">Figma</span><span class="mq-word">OpenCV</span><span class="mq-word hi">MUST · Multan</span><span class="mq-word">JWT Auth</span><span class="mq-word hi">Embeddings</span><span class="mq-word">Cloudinary</span><span class="mq-word hi">Random Forest</span><span class="mq-word">Pandas</span>
     </div>
   </div>
 </div>
@@ -723,7 +773,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
     <div>
       <p class="about-eyebrow fi">About Me</p>
       <h2 class="about-h fi d1">I build<br/>things<br/><em>that work.</em></h2>
-      <p class="about-body fi d2" id="animText">I'm a 4th-semester CS student at <strong>MUST with a perfect 4.0 GPA</strong>. I built CEARA — a complete AI interview evaluation system with real-time <strong>Whisper transcription</strong> and <strong>MediaPipe behavioral analysis</strong>. I'm currently delivering a <strong>production e-commerce platform</strong> for a real client with live payment gateways and WhatsApp notifications. My goal is Full-Stack AI Product Engineering — building the product around the model. Long term: <strong>my own AI startup</strong>.</p>
+      <p class="about-body fi d2" id="animText">I'm a 4th-semester CS student at <strong>MUST with a perfect 4.0 GPA</strong>. I built CEARA — a complete AI interview evaluation system with real-time <strong>Whisper transcription</strong> and <strong>MediaPipe behavioral analysis</strong>. I'm currently delivering a <strong>production e-commerce platform</strong> for a real client with live payment gateways and WhatsApp notifications. As a <strong>Machine Learning Intern at Arch Technologies</strong>, I shipped four end-to-end ML web apps in one summer. My goal is Full-Stack AI Product Engineering — building the product around the model. Long term: <strong>my own AI startup</strong>.</p>
       <a href="mailto:fatimalaiba2727@gmail.com" class="btn-primary fi d3" style="margin-top:0.5rem;display:inline-flex;">Let's Talk →</a>
     </div>
     <div class="about-nums fi d1 xr">
@@ -732,7 +782,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
         <div class="about-num-l">CGPA · 4 semesters</div>
       </div>
       <div class="about-num">
-        <div class="about-num-v">5<span>+</span></div>
+        <div class="about-num-v">10<span>+</span></div>
         <div class="about-num-l">Shipped projects</div>
       </div>
       <div class="about-num">
@@ -740,8 +790,42 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
         <div class="about-num-l">National podiums</div>
       </div>
       <div class="about-num">
-        <div class="about-num-v">10<span>+</span></div>
+        <div class="about-num-v">15<span>+</span></div>
         <div class="about-num-l">Production technologies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="exp-inner">
+    <p class="about-eyebrow fi">Work Experience</p>
+    <h2 class="about-h fi d1" style="margin-bottom:2.5rem;">On the<br/><em>job.</em></h2>
+    <div class="exp-card fi d2">
+      <div class="exp-strip"></div>
+      <div class="exp-body">
+        <div class="exp-top">
+          <div>
+            <div class="exp-role">Machine Learning Internship</div>
+            <div class="exp-org">Arch Technologies</div>
+          </div>
+          <div class="exp-meta">Jul 2026 – Aug 2026<br/>Islamabad, Pakistan</div>
+        </div>
+        <p class="exp-desc">Built and deployed four end-to-end ML systems in a single summer — spanning text classification, computer vision, regression, and multi-class classification — each shipped as a live, interactive web application with its own UI/UX.</p>
+        <ul class="exp-points">
+          <li>Trained a Naive Bayes email spam classifier on a 194K-email corpus — 93.5% accuracy, 95.1% precision on a 38,770-message held-out test set</li>
+          <li>Built a CNN-based handwritten digit recognizer (MNIST) reaching 99.14% test accuracy, with drawn and uploaded image input</li>
+          <li>Developed a Random Forest regression model for California housing prices (R² = 0.809) with engineered feature ratios and feature-importance analysis</li>
+          <li>Built a Random Forest classifier for iris species identification, validated via 5-fold cross-validation (96.67% accuracy)</li>
+          <li>Deployed all four on Streamlit Cloud with custom UI/UX; managed version control and documentation via GitHub</li>
+        </ul>
+        <div class="exp-stat-grid">
+          <div class="exp-stat"><div class="exp-stat-v">4</div><div class="exp-stat-l">ML systems shipped</div></div>
+          <div class="exp-stat"><div class="exp-stat-v">93.5%</div><div class="exp-stat-l">Spam accuracy</div></div>
+          <div class="exp-stat"><div class="exp-stat-v">99.14%</div><div class="exp-stat-l">MNIST accuracy</div></div>
+          <div class="exp-stat"><div class="exp-stat-v">0.809</div><div class="exp-stat-l">Housing model R²</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -753,11 +837,14 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
     <p class="dark-eyebrow fi">Technical Stack</p>
     <h2 class="dark-h fi d1">What I<br/><em>build with.</em></h2>
     <div class="skills-rows">
-      <div class="skill-row fi"><div class="skill-num">01</div><div class="skill-name">AI / LLM</div><div class="skill-tags"><span class="stag">Groq API</span><span class="stag">OpenAI</span><span class="stag">Llama 3.3</span><span class="stag">Llama 4 Scout</span><span class="stag">Prompt Engineering</span><span class="stag">RAG</span><span class="stag">Embeddings</span><span class="stag">LangChain</span><span class="stag">Vercel AI SDK</span></div></div>
-      <div class="skill-row fi d1"><div class="skill-num">02</div><div class="skill-name">Vision & Audio</div><div class="skill-tags"><span class="stag">MediaPipe</span><span class="stag">OpenCV</span><span class="stag">faster-whisper</span><span class="stag">librosa</span><span class="stag">WebRTC</span><span class="stag">VAD</span><span class="stag">ESP32-CAM</span></div></div>
-      <div class="skill-row fi d2"><div class="skill-num">03</div><div class="skill-name">Frontend</div><div class="skill-tags"><span class="stag">Next.js 14</span><span class="stag">React</span><span class="stag">TypeScript</span><span class="stag">Tailwind CSS</span><span class="stag">Zustand</span><span class="stag">shadcn/ui</span><span class="stag">Figma</span></div></div>
-      <div class="skill-row fi d3"><div class="skill-num">04</div><div class="skill-name">Backend & DB</div><div class="skill-tags"><span class="stag">Node.js</span><span class="stag">Express</span><span class="stag">Python</span><span class="stag">REST APIs</span><span class="stag">MongoDB</span><span class="stag">PostgreSQL</span><span class="stag">Supabase</span><span class="stag">SQLite</span><span class="stag">JWT</span></div></div>
-      <div class="skill-row fi d4"><div class="skill-num">05</div><div class="skill-name">DevOps & Tools</div><div class="skill-tags"><span class="stag">Git</span><span class="stag">GitHub</span><span class="stag">Vercel</span><span class="stag">Render</span><span class="stag">CI/CD</span><span class="stag">Cloudinary</span><span class="stag">Linux</span></div></div>
+      <div class="skill-row fi"><div class="skill-num">01</div><div class="skill-name">Languages</div><div class="skill-tags"><span class="stag">Python</span><span class="stag">JavaScript</span><span class="stag">TypeScript</span><span class="stag">C++</span><span class="stag">SQL</span></div></div>
+      <div class="skill-row fi d1"><div class="skill-num">02</div><div class="skill-name">AI / LLM</div><div class="skill-tags"><span class="stag">Groq API</span><span class="stag">OpenAI</span><span class="stag">Llama 3.3</span><span class="stag">Llama 4 Scout</span><span class="stag">Prompt Engineering</span><span class="stag">RAG</span><span class="stag">Embeddings</span><span class="stag">LangChain</span><span class="stag">Vercel AI SDK</span></div></div>
+      <div class="skill-row fi d2"><div class="skill-num">03</div><div class="skill-name">Data Science & ML</div><div class="skill-tags"><span class="stag">scikit-learn</span><span class="stag">TensorFlow / Keras</span><span class="stag">CNN</span><span class="stag">Random Forest</span><span class="stag">XGBoost</span><span class="stag">SVM</span><span class="stag">Naive Bayes</span><span class="stag">Logistic Regression</span><span class="stag">Pandas</span><span class="stag">TF-IDF</span></div></div>
+      <div class="skill-row fi d3"><div class="skill-num">04</div><div class="skill-name">Vision & Audio</div><div class="skill-tags"><span class="stag">MediaPipe</span><span class="stag">OpenCV</span><span class="stag">faster-whisper</span><span class="stag">librosa</span><span class="stag">WebRTC</span><span class="stag">VAD</span><span class="stag">ESP32-CAM</span></div></div>
+      <div class="skill-row fi d4"><div class="skill-num">05</div><div class="skill-name">Frontend</div><div class="skill-tags"><span class="stag">Next.js 14</span><span class="stag">React</span><span class="stag">TypeScript</span><span class="stag">Tailwind CSS</span><span class="stag">Zustand</span><span class="stag">shadcn/ui</span></div></div>
+      <div class="skill-row fi"><div class="skill-num">06</div><div class="skill-name">Backend & DB</div><div class="skill-tags"><span class="stag">Node.js</span><span class="stag">Express</span><span class="stag">Python</span><span class="stag">REST APIs</span><span class="stag">MongoDB</span><span class="stag">PostgreSQL</span><span class="stag">Supabase</span><span class="stag">SQLite</span><span class="stag">JWT</span></div></div>
+      <div class="skill-row fi d1"><div class="skill-num">07</div><div class="skill-name">Design & Prototyping</div><div class="skill-tags"><span class="stag">Figma</span><span class="stag">Relume</span><span class="stag">UI Prototyping</span><span class="stag">SaaS Design</span><span class="stag">SRS / SDLC</span></div></div>
+      <div class="skill-row fi d2"><div class="skill-num">08</div><div class="skill-name">DevOps & Tools</div><div class="skill-tags"><span class="stag">Git</span><span class="stag">GitHub</span><span class="stag">Vercel</span><span class="stag">Render</span><span class="stag">Streamlit Cloud</span><span class="stag">CI/CD</span><span class="stag">Cloudinary</span><span class="stag">Linux</span></div></div>
     </div>
   </div>
 </section>
@@ -917,6 +1004,113 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
       </div>
 
     </div>
+
+    <!-- MORE BUILDS GRID -->
+    <div class="mb-head">
+      <p class="about-eyebrow fi">More Builds</p>
+      <h2 class="about-h fi d1" style="font-size:clamp(2rem,4.5vw,3.5rem);margin-bottom:0;">Live demos<br/><em>& deep cuts.</em></h2>
+    </div>
+    <div class="mb-grid">
+
+      <div class="mb-card fi">
+        <div class="mb-top">
+          <div class="mb-title">CardioSense — Heart Disease Risk</div>
+          <div class="mb-date">Jun–Jul 2026</div>
+        </div>
+        <p class="mb-desc">Classification pipeline comparing Logistic Regression, Random Forest, SVM, and XGBoost on clinical data. Live app for real-time risk assessment from user-input parameters.</p>
+        <div class="mb-stat">91% ROC-AUC</div>
+        <div class="mb-tags"><span class="pstag">Logistic Regression</span><span class="pstag">Random Forest</span><span class="pstag">SVM</span><span class="pstag">XGBoost</span><span class="pstag">Streamlit</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-ai">ML</span>
+          <a href="https://cardiosense-lf.streamlit.app/" target="_blank" class="mb-link">↗ Live App</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi d1">
+        <div class="mb-top">
+          <div class="mb-title">The Sorting Desk — Spam Classifier</div>
+          <div class="mb-date">Jul 2026</div>
+        </div>
+        <p class="mb-desc">Text classification system separating spam from legitimate email using TF-IDF features and a Multinomial Naive Bayes model, trained on 194K labeled real-world emails.</p>
+        <div class="mb-stat">93.5% accuracy · 95.1% precision</div>
+        <div class="mb-tags"><span class="pstag">scikit-learn</span><span class="pstag">TF-IDF</span><span class="pstag">Pandas</span><span class="pstag">Streamlit</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-ai">ML</span>
+          <a href="https://email-spam-identifier.streamlit.app/" target="_blank" class="mb-link">↗ Live App</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi d2">
+        <div class="mb-top">
+          <div class="mb-title">The Digit Atelier — MNIST CNN</div>
+          <div class="mb-date">Jul 2026</div>
+        </div>
+        <p class="mb-desc">Convolutional Neural Network trained on 60,000 MNIST images to classify handwritten digits, with live canvas-drawn or photo-uploaded input and per-digit confidence.</p>
+        <div class="mb-stat">99.14% test accuracy</div>
+        <div class="mb-tags"><span class="pstag">TensorFlow / Keras</span><span class="pstag">CNN</span><span class="pstag">Streamlit</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-ai">Computer Vision</span>
+          <a href="https://mnist-digit-identifier.streamlit.app/" target="_blank" class="mb-link">↗ Live App</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi d3">
+        <div class="mb-top">
+          <div class="mb-title">The Appraisal Office — Housing Prices</div>
+          <div class="mb-date">Aug 2026</div>
+        </div>
+        <p class="mb-desc">Random Forest regressor predicting California housing prices from location, structure, and community features, with engineered per-household ratio features.</p>
+        <div class="mb-stat">R² = 0.809 · MAE ≈ $32K</div>
+        <div class="mb-tags"><span class="pstag">Random Forest</span><span class="pstag">Pandas</span><span class="pstag">Streamlit</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-ai">Regression</span>
+          <a href="https://housing-price-prediction1.streamlit.app/" target="_blank" class="mb-link">↗ Live App</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi d4">
+        <div class="mb-top">
+          <div class="mb-title">Iris Flower Classification</div>
+          <div class="mb-date">Aug 2026</div>
+        </div>
+        <p class="mb-desc">Multi-class classifier identifying iris species from four flower measurements, validated with 5-fold cross-validation. Petal dimensions emerged as the dominant predictor.</p>
+        <div class="mb-stat">96.67% accuracy (5-fold CV)</div>
+        <div class="mb-tags"><span class="pstag">Random Forest</span><span class="pstag">scikit-learn</span><span class="pstag">Streamlit</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-ai">ML</span>
+          <a href="https://iris-classification-herbarium.streamlit.app/" target="_blank" class="mb-link">↗ Live App</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi">
+        <div class="mb-top">
+          <div class="mb-title">Elzora — Reverse Marketplace UX</div>
+          <div class="mb-date">2025</div>
+        </div>
+        <p class="mb-desc">Reverse-marketplace platform (buyers post requirements, sellers bid) designed across 10+ screens in Figma — landing page, dashboards, bidding interface, offer heatmap, negotiation chat — with full SDLC docs.</p>
+        <div class="mb-stat">12/12 requirements validated</div>
+        <div class="mb-tags"><span class="pstag">Figma</span><span class="pstag">Relume</span><span class="pstag">SRS</span><span class="pstag">SDLC</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-hw">UI/UX</span>
+          <a href="https://github.com/Laiba-Fatima-1" target="_blank" class="mb-link">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="mb-card fi d1">
+        <div class="mb-top">
+          <div class="mb-title">SudokuBlitz — C++ OOP Console Game</div>
+          <div class="mb-date">2024</div>
+        </div>
+        <p class="mb-desc">3-difficulty Sudoku game with a backtracking solver, file-based puzzle loading, color-coded console UI, and a scoring system built across 4 OOP classes.</p>
+        <div class="mb-stat">97% solver correctness</div>
+        <div class="mb-tags"><span class="pstag">C++</span><span class="pstag">OOP</span><span class="pstag">Backtracking</span><span class="pstag">Windows API</span></div>
+        <div class="mb-foot">
+          <span class="mb-badge pb-hw">Systems</span>
+          <a href="https://github.com/Laiba-Fatima-1" target="_blank" class="mb-link">↗ GitHub</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -930,6 +1124,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
       <div class="ach-card fi d1"><span class="ach-icon">🥉</span><div class="ach-title">3rd — TECHxpo 2026</div><p class="ach-desc">Same project, second national competition at Women University Multan. Two podiums in 30 days.</p><div class="ach-year">Women University Multan · 2026</div></div>
       <div class="ach-card fi d2"><span class="ach-icon">🏆</span><div class="ach-title">Quiz — Semi-Finalist</div><p class="ach-desc">3-member team in C++ OOP, Database Systems & Mathematics. Semi-finals, 3rd place overall.</p><div class="ach-year">MUST · 2026</div></div>
       <div class="ach-card fi d3"><span class="ach-icon">⭐</span><div class="ach-title">4.0 CGPA — 4 Semesters</div><p class="ach-desc">Perfect academic record while building production projects and winning competitions.</p><div class="ach-year">MUST · 2024 – Present</div></div>
+      <div class="ach-card fi d4"><span class="ach-icon">🧪</span><div class="ach-title">4 ML Systems — Arch Technologies</div><p class="ach-desc">Shipped four end-to-end, deployed ML web apps during a summer machine learning internship.</p><div class="ach-year">Islamabad · Jul–Aug 2026</div></div>
     </div>
   </div>
 </section>
@@ -1000,12 +1195,6 @@ if(at){
 }
 
 // Sticky card scale
-const cards=[
-  {el:document.querySelector('#pc1 .proj-card'),top:100},
-  {el:document.querySelector('.proj-card:nth-of-type(2)'),top:128},
-  {el:document.querySelector('.proj-card:nth-of-type(3)'),top:156},
-];
-// use querySelectorAll for proj-cards
 const pCards=document.querySelectorAll('.proj-card');
 const tops=[100,128,156];
 const total=pCards.length;
