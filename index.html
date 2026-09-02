@@ -784,37 +784,37 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
               <div class="proj-left">
                 <div class="proj-num-big">01</div>
                 <div class="proj-info">
-                  <div class="proj-cat">AI System · Lead: AI & Backend · 2026</div>
-                  <div class="proj-title">CEARA — AI Interview Evaluation</div>
+                  <div class="proj-cat">2nd Year Project · AI System · April – May 2026</div>
+                  <div class="proj-title">CEARA — Cognitive Evaluation &amp; Assessment Review Assistant</div>
                 </div>
               </div>
               <div class="proj-right">
                 <span class="proj-badge pb-ai">AI System</span>
                 <span class="proj-badge pb-ai">Python</span>
-                <a href="https://github.com/Laiba-Fatima-1" target="_blank" class="proj-link-btn">↗ Private Repo</a>
+                <a href="https://github.com/Laiba-Fatima-1/ceara-showcase" target="_blank" rel="noopener noreferrer" class="proj-link-btn">↗ View Showcase</a>
               </div>
             </div>
             <div class="proj-content">
               <div class="proj-desc-col">
-                <p class="proj-desc">A locally deployable AI platform that evaluates interviews in real time — transcribing speech with Whisper, tracking 9 behavioral signals via MediaPipe, scoring answers with Groq + Llama 3.3, and generating rubric-weighted PDF reports.</p>
+                <p class="proj-desc">An AI-powered interview evaluation system with two modes: a live interviewer-assist tool and a solo practice mode. CEARA combines real-time computer vision, speech transcription, and an LLM in a single scoring pipeline.</p>
                 <ul class="proj-points">
-                  <li>Real-time Whisper transcription updating every 4s; &lt;15s final processing for 3 min audio</li>
-                  <li>9-signal MediaPipe engine: eye contact, blink rate (EAR), posture, pitch variance via librosa</li>
-                  <li>17-dimension configurable rubric; parallel LLM scoring with radar charts in PDF output</li>
-                  <li>VAD hands-free recording (1.8s silence), STAR analysis, filler word & WPM tracking</li>
-                  <li>Zero audio/video transmitted externally — all processing fully local</li>
+                  <li>10 behavioral signal detectors including blink rate, posture, eye contact, speaking pace, filler words, and pitch variance from webcam and audio input</li>
+                  <li>Groq API with Llama 3.3 70B for dynamic questions, follow-ups, and content scoring, plus an offline fallback using a local question bank and sentence-transformer similarity</li>
+                  <li>Configurable rubric balancing AI-automated scores with manual expert ratings, alongside STAR-framework answer checking</li>
+                  <li>SQLite + bcrypt authentication and a Streamlit UI with real-time webcam dashboards, session history, progress charts, and automated PDF reports</li>
+                  <li>150+ automated tests covering the pipeline, including fixes for session-state race conditions, encoding bugs, and substring-matching errors</li>
                 </ul>
                 <div class="proj-stack-tags">
-                  <span class="pstag">Python</span><span class="pstag">Streamlit</span><span class="pstag">Groq</span><span class="pstag">Llama 3.3</span><span class="pstag">faster-whisper</span><span class="pstag">MediaPipe</span><span class="pstag">OpenCV</span><span class="pstag">librosa</span><span class="pstag">SQLite</span><span class="pstag">reportlab</span>
+                  <span class="pstag">Python</span><span class="pstag">Streamlit</span><span class="pstag">Groq API</span><span class="pstag">Llama 3.3 70B</span><span class="pstag">MediaPipe</span><span class="pstag">faster-whisper</span><span class="pstag">librosa</span><span class="pstag">sentence-transformers</span><span class="pstag">OpenCV</span><span class="pstag">SQLite</span><span class="pstag">bcrypt</span><span class="pstag">reportlab</span>
                 </div>
               </div>
               <div class="proj-visual" style="background:linear-gradient(145deg,#EEE8FF,#F5F2FF);">
                 <div class="proj-visual-emoji">🧠</div>
                 <div class="proj-visual-label" style="color:var(--accent);">AI Interview Evaluation Platform</div>
                 <div class="proj-visual-stats">
-                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">17</div><div class="pvs-label" style="color:var(--mid);">Rubric dims</div></div>
-                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">9</div><div class="pvs-label" style="color:var(--mid);">Signals</div></div>
-                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">&lt;15s</div><div class="pvs-label" style="color:var(--mid);">Transcription</div></div>
+                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">10</div><div class="pvs-label" style="color:var(--mid);">Signal detectors</div></div>
+                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">2</div><div class="pvs-label" style="color:var(--mid);">App modes</div></div>
+                  <div class="pvs"><div class="pvs-val" style="color:var(--accent);">150+</div><div class="pvs-label" style="color:var(--mid);">Automated tests</div></div>
                 </div>
               </div>
             </div>
@@ -838,7 +838,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,
               <div class="proj-right">
                 <span class="proj-badge pb-client">Client Work</span>
                 <span class="proj-badge pb-ai">Full-Stack</span>
-                <a href="https://github.com/Laiba-Fatima-1" target="_blank" class="proj-link-btn">↗ GitHub</a>
+                <a href="https://dainty-darlings.vercel.app/" target="_blank" rel="noopener noreferrer" class="proj-link-btn">↗ Live Site</a>
               </div>
             </div>
             <div class="proj-content">
